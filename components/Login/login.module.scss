@@ -1,0 +1,246 @@
+//styles for login components
+
+@import "../../styles/_mixin";
+
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  line-height: 0;
+
+  .banner {
+    display: flex;
+    max-width: 50.48vw;
+    width: fit-content;
+    height: 100vh;
+
+    @include tabletSmall() {
+      display: none;
+    }
+
+    .bannerImg {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 56.52%;
+    height: 100vh;
+    margin: auto;
+    background-color: #fbfbfb;
+
+    @include tabletSmall() {
+      width: 100%;
+      justify-content: flex-start;
+      padding-top: 5vh;
+      background-color: #f2f2f2;
+    }
+
+    .logo {
+      margin-bottom: 5.1vh;
+
+      .logoImg {
+        width: 224px;
+        height: 73px;
+
+        @include tabletSmall() {
+          width: 148px;
+          height: 48px;
+        }
+      }
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: min(80%, 569px);
+      height: 554px;
+      background-color: #fff;
+      box-shadow: 0px 3px 12px #1e36480a;
+      border-radius: 8px;
+      margin-bottom: 12vh;
+
+      @include desktop() {
+        margin-bottom: 0vh;
+      }
+
+      @include desktopSmall() {
+        width: 80%;
+      }
+
+      @include tabletSmall() {
+        width: min(90%, 400px);
+        height: min(70%, 554px);
+      }
+
+      .formTop {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 73px;
+        margin-bottom: 50px;
+
+        @include mobile() {
+          margin-bottom: 30px;
+        }
+
+        h1 {
+          font-size: 32px;
+          line-height: 43px;
+          font-weight: bold;
+          color: #525252;
+        }
+        span {
+          font-size: 15px;
+          line-height: 20px;
+          font-weight: normal;
+          color: #525252;
+        }
+      }
+
+      .formMiddle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        .formGroup {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 15px;
+          width: 389px;
+
+          @include tablet() {
+            width: max(85%, 315px);
+          }
+
+          @include tabletSmall() {
+            width: min(85%, 315px);
+          }
+
+          .title {
+            width: 100%;
+            text-align: left;
+            font-size: 15px;
+            line-height: 20px;
+            letter-spacing: 0px;
+            font-weight: normal;
+            color: #525252;
+            margin-bottom: 5px;
+          }
+
+          input[type="text"],
+          input[type="password"] {
+            border: 0px;
+            height: 45px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            padding: 0 15px;
+            font-size: 16px;
+            line-height: 22px;
+            letter-spacing: 0px;
+            color: #3e3e3e;
+            outline: none;
+            width: 100%;
+
+            &::placeholder {
+              color: #99a0a7;
+            }
+
+            &:focus {
+              border: 2px solid #4b9ce2;
+              background-color: #f0f8ff;
+            }
+          }
+
+          span {
+            width: 100%;
+            text-align: left;
+            color: red;
+            font-size: 12px;
+            line-height: 16px;
+            margin-top: 5px;
+            padding-left: 5px;
+          }
+
+          .forgetPassword {
+            width: 100%;
+            font-size: 12px;
+            line-height: 16px;
+            color: #b1b1b1;
+            text-align: right;
+            margin-top: 5px;
+          }
+
+          &.formButton {
+            margin-top: 15px;
+
+            @include mobile() {
+              margin-top: 0px;
+            }
+
+            .loginButton {
+              width: 100%;
+              height: 45px;
+              border: 0px;
+              border-radius: 8px;
+              font-size: 18px;
+              font-weight: bold;
+              line-height: 24px;
+              color: #fff;
+              background-color: #4b9ce2;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+
+              &:hover {
+                cursor: pointer;
+                opacity: 0.8;
+              }
+            }
+          }
+
+          &.formError {
+            input[type="text"],
+            input[type="password"] {
+              border: 2px solid #f77474;
+              background-color: #fff2f2;
+
+              &::placeholder {
+                color: #99a0a7;
+              }
+            }
+          }
+        }
+      }
+
+      .formBottom {
+        font-size: 15px;
+        line-height: 20px;
+        font-weight: normal;
+        color: #525252;
+        margin-top: 5px;
+
+        @include mobile() {
+          margin-top: 10px;
+        }
+
+        .register {
+          text-decoration: none;
+          font-weight: bold;
+          color: #4b9ce2;
+        }
+      }
+    }
+  }
+}
